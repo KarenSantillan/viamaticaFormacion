@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Consulta de Datos del curso</title>
+</head>
+<body>
+    <h1>Consulta de Datos del curso</h1>
+    <form action="/buscar" method="post">
+        <label for="tipoConsulta">Selecciona el tipo de consulta:</label>
+        <select id="tipoConsulta" name="tipoConsulta">
+            <option value="alumnosPorNombre">Alumnos por Nombre</option>
+            <option value="alumnosPorMaestro">Alumnos por Maestro</option>
+            <option value="mejoresAlumnosPorMateria">Mejores Alumnos por Materia</option>
+            <option value="materiaConPuntajeMasAlto">Materia con Puntaje Más Alto</option>
+        </select>
+
+        <div id="nombreInput" style="display:none;">
+            <label for="nombreAlumno">Nombre del Alumno:</label>
+            <input type="text" id="nombreAlumno" name="nombreAlumno">
+        </div>
+
+        <div id="maestroInput" style="display:none;">
+            <label for="maestroId">ID del Maestro:</label>
+            <input type="text" id="maestroId" name="maestroId">
+        </div>
+
+        <div id="materiaInput" style="display:none;">
+            <label for="materiaId">ID de la Materia:</label>
+            <input type="text" id="materiaId" name="materiaId">
+        </div>
+
+        <div id="puntajeInput" style="display:none;">
+            <label for="puntaje">Puntaje a buscar:</label>
+            <input type="text" id="puntaje" name="puntaje">
+        </div>
+
+        <button type="submit">Realizar Consulta</button>
+    </form>
+
+    <script>
+        document.getElementById('tipoConsulta').addEventListener('change', function() {
+            var selectedValue = this.value;
+            document.getElementById('nombreInput').style.display = 'none';
+            document.getElementById('maestroInput').style.display = 'none';
+            document.getElementById('materiaInput').style.display = 'none';
+            document.getElementById('puntajeInput').style.display = 'none';
+
+            if (selectedValue === 'alumnosPorNombre') {
+                document.getElementById('nombreInput').style.display = 'block';
+            } else if (selectedValue === 'alumnosPorMaestro') {
+                document.getElementById('maestroInput').style.display = 'block';
+            } else if (selectedValue === 'mejoresAlumnosPorMateria') {
+                document.getElementById('materiaInput').style.display = 'block';
+            } else if (selectedValue === 'materiaConPuntajeMasAlto') {
+                document.getElementById('puntajeInput').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
