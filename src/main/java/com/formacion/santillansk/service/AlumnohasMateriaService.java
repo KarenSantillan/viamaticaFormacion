@@ -16,9 +16,9 @@ public class AlumnohasMateriaService {
 	@Autowired
 	AlumnohasMateriaRepository alumnohasMateriaRepository;
 	//metodos
-//    public List<AlumnohasMaterias> findTopNByMateriaOrderByPromedioDesc(@Param("materia") Materia materia, Pageable pageable){
-//    	return alumnohasMateriaRepository.findTopNByMateriaOrderByPromedioDesc(materia.getIdMateria(), pageable);
-//    }
+    public List<AlumnohasMaterias> findTopNByMateriaOrderByPromedioDesc(@Param("materia") Materia materia, Pageable pageable){
+    	return alumnohasMateriaRepository.findTopNByMateriaOrderByPromedioDesc(materia.getIdMateria(), pageable);
+    }
 //
 //    public List<Materia> findMateriasByPuntaje(@Param("puntos") int puntos){
 //    	return alumnohasMateriaRepository.findMateriasByPuntaje(puntos);

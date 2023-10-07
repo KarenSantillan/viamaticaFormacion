@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 
 @Repository
 public interface AlumnoRepository extends JpaRepository<Alumno, Integer> {
-    static final Logger log = LoggerFactory.getLogger(AlumnoRepository.class);
+    Logger log = LoggerFactory.getLogger(AlumnoRepository.class);
 
     //Búsqueda por nombre
     @Query("from Alumno v where v.nombre like %?1%")
@@ -32,7 +32,5 @@ public interface AlumnoRepository extends JpaRepository<Alumno, Integer> {
         } catch (CustomException ce) {
             log.error("Se ha generado la siguiente excepcion: " + ce.getMessage());
         }
-
-
     }
 }

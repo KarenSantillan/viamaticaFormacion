@@ -17,7 +17,7 @@ public interface MateriaRepository extends JpaRepository<Materia, Integer>{
     static final Logger log = LoggerFactory.getLogger(AlumnoRepository.class);
     //eliminacion logica
 
-    @Query("from  Materia am where am.puntos = :puntos GROUP BY am.materia")
+    @Query("from  Materia am where am.puntos = :puntos")
     List<Materia> findMateriasByPuntaje(@Param("puntos") int puntos);
     default void deleteMateria(Materia materia){
         try{

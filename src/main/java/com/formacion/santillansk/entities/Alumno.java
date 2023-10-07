@@ -29,18 +29,4 @@ public class Alumno {
 
 	@OneToMany(mappedBy = "alumnoMateria")
 	private List<AlumnohasMaterias> ahm = new ArrayList<>();
-
-	private Materia materias;
-
-	
-	
-	
-	
-	
-	
-	
-
-
-	
-	
 }

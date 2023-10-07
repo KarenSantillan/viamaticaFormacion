@@ -22,8 +22,6 @@ public class ListadoController {
 	MaestroService maestroService;
 	@Autowired
 	MateriaService materiaService;
-	@Autowired
-	AlumnohasMaterias alumnohasMaterias;
 
 	@GetMapping("/alumno")
 	public List<Alumno> buscarAlumnoNombre(@RequestParam String alumno){

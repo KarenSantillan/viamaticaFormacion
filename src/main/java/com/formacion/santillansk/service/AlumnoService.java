@@ -22,10 +22,10 @@ public class AlumnoService {
 	public Materia materiaPuntajeAlto(String puntaje, Integer idAlumno){
 		Alumno alumno = alumnoRepository.findById(idAlumno).orElse(null); //obtiene el alumno
 		List<Materia> materiasAlumno = new ArrayList<>();
-		//materias relacionadas al alumno ingresado
-		for(Materia materia : alumno.getMaterias()){
-			materiasAlumno.add(materia);
-		}
+//		//materias relacionadas al alumno ingresado
+//		for(Materia materia : alumno.getMaterias()){
+//			materiasAlumno.add(materia);
+//		}
 		//filto de materias segun puntaje
 		List<Materia> materiasSegunPuntaje = materiasAlumno.stream().filter(materia -> materia.getPuntos()  == puntaje).collect(Collectors.toList());
 		Materia materiaAlta = Collections.max(materiasSegunPuntaje, Comparator.comparing(Materia::getPuntos));
